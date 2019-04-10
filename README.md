@@ -10,3 +10,4 @@
 1. javascript
 1. python
 1. mysql
+1. cmd
