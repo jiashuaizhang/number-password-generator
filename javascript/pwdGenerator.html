@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>6位密码生成器</title>
+</head>
+<body>
+	<span id="pwd"></span>
+	<button onclick="showPwd()">重新生成</button>
+</body>
+<script type="text/javascript" src="./pwdGenerator.js"></script>
+<script type="text/javascript">
+	function showPwd(){
+	   let span = document.getElementById('pwd');
+	   span.innerHTML = generatePwd();
+	}
+	showPwd();
+</script>
+</html>
