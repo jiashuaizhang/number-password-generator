@@ -10,6 +10,6 @@ for /l %%i in (1,1,!length!) do (
 	set /a num=!RANDOM! %% %mod% + %min%
 	set /a temp=!temp!!num!
 )
-set pwd=!temp:~1,7!
+set pwd=!temp:~1,%length%!
 echo !pwd!
 pause
