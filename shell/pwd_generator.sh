@@ -3,15 +3,11 @@ length=6
 min=0
 max=9
 mod=$((max - min + 1))
-function randomNum(){
-  rand=$((RANDOM % mod + min))
-  return $rand
-}
 temp=""
 for((i=0;i<length;i++))
 do
-randomNum
-temp=$temp$?
+rand=$((RANDOM % mod + min))
+temp=$temp$rand
 done
 pwd=$temp
 echo $pwd
