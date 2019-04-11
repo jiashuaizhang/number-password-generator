@@ -9,5 +9,6 @@ for /l %%i in (1,1,6) do (
 	set /a num=!RANDOM! %% %mod% + %min%
 	set /a temp=!temp!!num!
 )
-echo !temp:~1,7!
+set pwd=!temp:~1,7!
+echo !pwd!
 pause

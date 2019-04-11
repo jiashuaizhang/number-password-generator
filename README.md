@@ -9,5 +9,6 @@
 1. java
 1. javascript
 1. python
+1. bat
+1. shell
 1. mysql
-1. cmd
