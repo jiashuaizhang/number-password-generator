@@ -1,4 +1,4 @@
-::零基础编程,windows10测试通过
+::windows10测试通过
 @echo off
 setlocal enabledelayedexpansion
 set length=6
