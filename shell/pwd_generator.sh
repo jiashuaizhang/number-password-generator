@@ -1,4 +1,5 @@
 #!/bin/bash
+length=6
 min=0
 max=9
 mod=$((max - min + 1))
@@ -7,7 +8,7 @@ function randomNum(){
   return $rand
 }
 temp=""
-for((i=0;i<6;i++))
+for((i=0;i<length;i++))
 do
 randomNum
 temp=$temp$?
