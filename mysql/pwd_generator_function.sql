@@ -7,7 +7,8 @@ create function pwd_generator()
 returns char(6) 
 begin
 declare pwd char(6);
-set pwd = SUBSTR(CAST(RAND() AS CHAR),3,6);
+declare length integer default 6;
+set pwd = SUBSTR(CAST(RAND() AS CHAR),3,length);
 return pwd;
 end;
 -- 调用
