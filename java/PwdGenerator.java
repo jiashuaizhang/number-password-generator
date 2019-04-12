@@ -1,29 +1,41 @@
+//pagkage omitted
 
 import java.util.Random;
 
 /**
- * 六位随机数字密码生成器
+ * 无参密码生成器接口
  * @author zhangjiashuai
  */
-public class PwdGenerator {
+@FunctionalInterface
+public interface PwdGenerator {
 	
-	private static final int LENGTH = 6;
-	
-	public String generate() {
-		Random random = new Random();
-		StringBuilder buider = new StringBuilder();
-		for (int i = 0; i < LENGTH; i++) {
-			buider.append(random.nextInt(10));
-		}
-		return buider.toString();
-	}
+	String generate();
 	
 	/**
-	 * 测试方法
-	 * @param args
+	 * 六位数字密码生成器 默认实现
+	 * @author zhangjiashuai
 	 */
+	class DefaultPwdGenerator implements PwdGenerator{
+
+		private static final int LENGTH = 6;
+		
+		@Override
+		public String generate() {
+			Random random = new Random();
+			StringBuilder buider = new StringBuilder();
+			for (int i = 0; i < LENGTH; i++) {
+				buider.append(random.nextInt(10));
+			}
+			return buider.toString();
+		}
+		
+	}
+	
+	//测试方法
 	public static void main(String[] args) {
-		PwdGenerator generator = new PwdGenerator();
-		System.out.println(generator.generate());
+		PwdGenerator generator0 = new DefaultPwdGenerator();
+		System.out.println(generator0.generate());
+		PwdGenerator generator1 = () -> String.valueOf(Math.random()).substring(2, 8);
+		System.out.println(generator1.generate());
 	}
 }
