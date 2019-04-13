@@ -11,4 +11,5 @@
 1. python
 1. bat
 1. shell
+1. lua
 1. mysql
